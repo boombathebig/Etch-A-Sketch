@@ -21,6 +21,7 @@ function gridMake(num) {
     let grid= document.createElement('div');
     grid.classList.add('sqr');
     grid.style.border= "1px solid gray";
+    grid.style.background= "white";
     gridContainer.appendChild(grid);
     createGrid.style.gridTemplateColumns= "repeat(" + num  + ", 1fr)";
     createGrid.style.gridTemplateRows= "repeat(" + num  + ", 1fr)";
@@ -33,11 +34,13 @@ function gridMake(num) {
 gridMake(gridsize);
 //color the grid black when hovered
 var colorSquares= document.querySelectorAll(".sqr");
-colorSquares.forEach(element => {
+function colorFunction(){
+  var colorSquares2= document.querySelectorAll(".sqr");  
+colorSquares2.forEach(element => {
   element.addEventListener('mouseover', function(e){
     element.style.backgroundColor= "black";
-  })});
-
+  })})};
+colorFunction();
  
 // event listener giving button it's purpose
 
@@ -54,6 +57,7 @@ while(clearList.hasChildNodes()) {
 }
   let gridsize= Math.sqrt(prompt("give me a number"));
   gridMake(gridsize);
+  colorFunction();
 
 });
   
