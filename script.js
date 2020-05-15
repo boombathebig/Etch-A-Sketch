@@ -8,8 +8,9 @@ document.body.appendChild(createGrid);
 createGrid.style.display = "grid";
 createGrid.classList.add("gridContainer");
 createGrid.style.width= "800px";
-createGrid.style.height="700px";
-createGrid.style.borderStyle="dashed";
+createGrid.style.height="800px";
+createGrid.style.border= "solid";
+createGrid.style.marginTop="20px";
 }
 gridCreationFunction();
 
@@ -20,14 +21,14 @@ function gridMake(num) {
   for(let i=0; i<num * num;i++){
     let grid= document.createElement('div');
     grid.classList.add('sqr');
-    grid.style.border= "1px solid gray";
-    grid.style.background= "white";
+    grid.style.background= "grey";
     gridContainer.appendChild(grid);
+   //set style of grid container, specifically the column / row rules
     createGrid.style.gridTemplateColumns= "repeat(" + num  + ", 1fr)";
     createGrid.style.gridTemplateRows= "repeat(" + num  + ", 1fr)";
     
   }
-//set style of grid container, specifically the column / row rules
+
 
 
    }
@@ -55,7 +56,7 @@ button.addEventListener("click", function(){
 while(clearList.hasChildNodes()) {
     clearList.removeChild(clearList.firstChild);
 }
-  let gridsize= Math.sqrt(prompt("give me a number"));
+  let gridsize= prompt("How many squares would you like per side?");
   gridMake(gridsize);
   colorFunction();
 
