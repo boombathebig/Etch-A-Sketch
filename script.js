@@ -7,8 +7,8 @@ function gridCreationFunction(){
 document.body.appendChild(createGrid);
 createGrid.style.display = "grid";
 createGrid.classList.add("gridContainer");
-createGrid.style.width= "500px";
-createGrid.style.height="500px";
+createGrid.style.width= "600px";
+createGrid.style.height="600px";
 createGrid.style.border= "solid";
 createGrid.style.marginTop="20px";
 }
